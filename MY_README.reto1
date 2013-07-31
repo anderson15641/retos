@@ -1,0 +1,12 @@
+#Script bases de datos
+create database reto_1_development;
+create database reto_1_production;
+create database reto_1_test;
+
+#ruby on rails
+rails g model Usuario nombre:string apellido:string correo:string contrasena:string 
+
+rails g --force model Archivo nombre:string nombre_real:string ubicacion:text usuario:references 
+
+#Migrar base de datos
+rake db:migrate

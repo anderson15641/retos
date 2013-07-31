@@ -1,0 +1,16 @@
+Retos Topicos Especiales En Telematica
+Universidad EAFIT 2013-2
+
+Requerimientos (Version sugerida): 
+  Ruby 1.9.3 
+  Ruby on rails 4.0.0
+  mysql client 5.5
+  mysql server 5.5
+  libmysql-ruby 
+  libmysqlclient-dev
+
+Gems:
+  mysql2
+  therubyracer
+
+Anderson Lopez M

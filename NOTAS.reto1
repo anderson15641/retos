@@ -1,0 +1,9 @@
+#Guias seguidas
+
+http://gorails.com/setup/ubuntu#overview
+
+https://www.digitalocean.com/community/articles/how-to-install-ruby-on-rails-on-ubuntu-12-04-lts-precise-pangolin-with-rvm
+
+#Agregar al .bashrc y reiniciar la consola para poder usar ruby y rails despue de cerrar la consola en que se instalo.
+
+source ~/.rvm/scripts/rvm

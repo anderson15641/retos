@@ -1,0 +1,32 @@
+<%= form_tag({:controller => "usuario", :action => "crear_usuario"}, :method => "post") do %>
+   
+   <%= label_tag "nombre", "Nombre:" %>
+   <br />
+   <%= text_field_tag "nombre", "", :required => "required" %>
+   <br />
+   
+   <%= label_tag "apellido", "Apellido:" %>
+   <br />
+   <%= text_field_tag "apellido", "", :required => "required" %>
+   <br/>
+
+   <%= label_tag  "correo", "Correo:" %>
+   <br />
+   <%= text_field_tag "correo", "", :required => "required" %>
+   <br/>
+
+   <%= label_tag "contrasena", "Contraseña:" %>
+   <br />
+   <%= text_field_tag "contrasena", "", :required => "required" %>
+   <br />
+   <%= label_tag "conf_contrasena", "Confirmar contraseña:" %>
+   <br />
+   <%= text_field_tag "conf_contrasena", "", :required => "required" %>
+   <br/><br/>
+
+   <%= submit_tag "Crear Usuario" %>
+<% end %>
+
+<% if @error_nuevo_usuario %>
+ <div style="color: #f00;"> error creando el usuario. </div>
+<% end %>

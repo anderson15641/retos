@@ -1,0 +1,38 @@
+<% if @mensaje %>
+<!-- Mensaje enviado de la anterior página-->
+<div>
+   <strong><h2><%= @mensaje %></h2> </strong>
+</div>
+<br>
+<% end %>
+<h2>Ordenar Por:</h2>
+<br>
+<div>
+	<strong>
+		<%= link_to "Ordenar por usuario", {:controller => "archivos", :action => "listar_archivos", :orden => 'usuario' }, {:method => "post"}%>
+	</strong> 
+	<strong> | | </strong>
+	<strong>
+		<%= link_to "Ordenar por nombre", {:controller => "archivos", :action => "listar_archivos", :orden => 'nombre' }, {:method => "post"} %>
+	</strong>
+	<strong> | | </strong>
+	<strong>
+		<%= link_to "Ordenar por url", {:controller => "archivos", :action => "listar_archivos", :orden => 'url' }, {:method => "post"} %>
+	</strong>
+</div>
+<br>
+<br>
+<!-- Lista de archivos subidos -->
+<% @arr_archivos.each do |a| %>
+	<div id="column">
+		<%if @usuario_borrar %>
+			<div class="title">
+		       <%= link_to "Borrar", {:controller => "archivos", :action => "borrar_archivos", :archivo =>a}, {:method => "post", :confirm => "Seguro?"} %>
+		    </div>
+	    <% end %>
+	    <%= image_tag "/archivos/"+a.nombre, :alt => "imagen", :title => "imagen", :width => 100%>
+	    <a class="icon icon-arrow-right button" target="_blank" href="/archivos/<%= a.nombre%>"> <%= a.nombre_real %> </a>
+	</div>  
+<% end %>
+<!-- Acá se guarda el nombre del archivo antes de que el formularo sea enviado-->
+<hr />
